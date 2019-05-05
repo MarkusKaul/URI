@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Imposto de renda
+salario = float(input())
+if (salario >= 0.00) and (salario <= 2000.00):
+    print('Isento')
+elif (salario >= 2000.01) and (salario <= 3000.00):
+    a = salario - 2000.00
+    r = a * 0.08
+    print('R$ {:.2f}'.format(r))
+elif (salario >= 3000.01) and (salario <= 4500.00):
+    a = 1000.00
+    b = salario - 3000.00
+    r = (a * 0.08) + (b * 0.18)
+    print('R$ {:.2f}'.format(r))
+elif salario > 4500.00:
+    a = 1000.00
+    b = 1500.00
+    c = salario - 4500.00
+    r = (a * 0.08) + (b * 0.18) + (c * 0.28)
+    print('R$ {:.2f}'.format(r))

@@ -1,0 +1,9 @@
+nome = str(input())
+
+sf = float(input()) #Salário fixo
+
+ve = float(input()) #Vendas Efetuadas
+
+total = sf + (ve * 0.15)
+
+print('TOTAL = R$ {:.2f}'.format(total))

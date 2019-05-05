@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Soma de Ímpares Consecutivos II
+
+n = int(input())
+lista = []
+
+for x in range(n):
+    c = str(input()).split()
+    a = int(c[0])
+    b = int(c[1])
+    soma = 0
+    if a > b:
+        a, b = b, a
+    for y in range(a + 1, b):
+        if y % 2 != 0:
+            soma += y
+    lista.append(soma)
+
+for z in range(len(lista)):
+    print(lista[z])

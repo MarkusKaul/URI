@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Idades
+
+soma = 0
+cont = 0
+t = 0
+while t >= 0:
+    t = int(input())
+    if t >= 0:
+        soma += t
+        cont += 1
+print('{:.2f}'.format(soma / cont))

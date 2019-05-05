@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Soma de Ímpares Consecutivos III
+
+n = int(input())
+casos = []
+cont = 0
+soma = 0
+
+for x in range(n):
+    text = str(input()).split()
+    casos.append([int(text[0]), int(text[1])])
+
+for y in range(len(casos)):
+    num = casos[y][0]
+    while cont < casos[y][1]:
+        if num % 2 != 0:
+            cont += 1
+            soma += num
+        num += 1
+    cont = 0
+    print(soma)
+    soma = 0

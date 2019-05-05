@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Número Perfeito
+
+n = int(input())
+numeros = []
+
+for x in range(n):
+    num = int(input())
+    numeros.append(num)
+
+for y in range(len(numeros)):
+    perfeito = 0
+    for z in range(1, numeros[y]):
+        if numeros[y] % z == 0:
+            perfeito += z
+    if perfeito == numeros[y]:
+        print('{} eh perfeito'.format(numeros[y]))
+    else:
+        print('{} nao eh perfeito'.format(numeros[y]))

@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Intervalo 2
+n = int(input())
+numeros = []
+Iin = 0
+Oin = 0
+
+for x in range(n):
+    a = int(input())
+    numeros.append(a)
+
+for x in range(len(numeros)):
+    if (numeros[x] >= 10) and (numeros[x] <= 20):
+        Iin = Iin + 1
+    else:
+        Oin = Oin + 1
+
+print('{} in'.format(Iin))
+print('{} out'.format(Oin))

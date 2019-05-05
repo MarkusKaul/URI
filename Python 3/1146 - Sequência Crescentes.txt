@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Sequências Crescentes
+
+x = 1
+n = []
+while x != 0:
+    x = int(input())
+    n.append(x)
+
+for z in range(len(n) - 1):
+    if n[z] != 0:
+        for y in range(1, n[z] + 1):
+            if y == n[z]:
+                print(y)
+            else:
+                print(y, end=' ')

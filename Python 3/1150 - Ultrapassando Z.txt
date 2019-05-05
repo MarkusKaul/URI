@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Ultrapassando Z
+
+x = int(input())
+z = int(input())
+soma = 0
+cont = 0
+while x >= z:
+    z = int(input())
+
+for y in range(x, z):
+    soma += y
+    cont += 1
+    if soma > z:
+        break
+
+print(cont)

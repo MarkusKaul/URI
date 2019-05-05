@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Tipos de Triângulo
+def ordem_crescente(numeros):
+    if (numeros[0] >= numeros[1]) and (numeros[0] >= numeros[2]):
+        if numeros[1] >= numeros[2]:
+            return [numeros[2], numeros[1], numeros[0]]
+        else:
+            return [numeros[1], numeros[2], numeros[0]]
+    elif (numeros[1] >= numeros[0]) and (numeros[1] >= numeros[2]):
+        if numeros[0] >= numeros[2]:
+            return [numeros[2], numeros[0], numeros[1]]
+        else:
+            return [numeros[0], numeros[2], numeros[1]]
+    elif (numeros[2] >= numeros[0]) and (numeros[2] >= numeros[1]):
+        if numeros[0] >= numeros[1]:
+            return [numeros[1], numeros[0], numeros[2]]
+        else:
+            return numeros
+
+
+texto = str(input()).split()
+texto01 = [float(texto[0]), float(texto[1]), float(texto[2])]
+ordem = ordem_crescente(texto01)
+a = ordem[2]
+b = ordem[1]
+c = ordem[0]
+
+if a >= (b + c):
+    print('NAO FORMA TRIANGULO')
+else:
+    if (a**2) == ((b**2) + (c**2)):
+        print('TRIANGULO RETANGULO')
+    elif (a**2) > ((b**2) + (c**2)):
+        print('TRIANGULO OBTUSANGULO')
+    elif (a**2) < ((b**2) + (c**2)):
+        print('TRIANGULO ACUTANGULO')
+    if a == b == c:
+        print('TRIANGULO EQUILATERO')
+    elif (a == b) or (a == c) or (b == c):
+        print('TRIANGULO ISOSCELES')

@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+#Idade em dias
+anoEmDias = 365
+mesEmDias = 30
+
+dias = int(input())
+
+ano = dias // anoEmDias
+
+dias = dias - (ano * 365)
+
+mes = dias // mesEmDias
+
+dias = dias - (mes * mesEmDias)
+
+print('{} ano(s)'.format(ano))
+print('{} mes(es)'.format(mes))
+print('{} dia(s)'.format(dias))

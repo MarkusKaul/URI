@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Sequência S
+
+s = 1
+
+for x in range(2, 101):
+    s = s + (1/x)
+print('{:.2f}'.format(s))

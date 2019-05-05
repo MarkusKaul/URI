@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Teste de Seleção 1
+texto = str(input())
+separador = texto.split()
+a = int(separador[0])
+b = int(separador[1])
+c = int(separador[2])
+d = int(separador[3])
+
+if ((b > c) and (d > a)) and ((c + d) > (a + b)) and (c > 0) and (d > 0) and (a % 2 == 0):
+    print('Valores aceitos')
+else:
+    print('Valores nao aceitos')

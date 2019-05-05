@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Área Inferior
+
+matriz = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+t = str(input())
+soma = 0
+esquerda = 5
+direita = 7
+media = 0
+
+for x in range(len(matriz)):
+    for y in range(len(matriz)):
+        n = float(input())
+        matriz[x][y] = n
+
+for linha in range(7, 12):
+    for coluna in range(esquerda, direita):
+        soma += matriz[linha][coluna]
+        media += 1
+    esquerda -= 1
+    direita += 1
+
+if t == 'S':
+    print('{:.1f}'.format(soma))
+else:
+    print('{:.1f}'.format(soma / media))

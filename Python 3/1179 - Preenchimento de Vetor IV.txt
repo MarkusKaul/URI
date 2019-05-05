@@ -1,0 +1,67 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Preenchimento de Vetor VI
+
+
+def pares():
+    for y in range(len(par)):
+        print('par[{}] = {}'.format(y, par[y]))
+
+
+def impares():
+    for w in range(len(impar)):
+        print('impar[{}] = {}'.format(w, impar[w]))
+
+
+vetor = []
+par = []
+impar = []
+aux01 = 0
+aux02 = 0
+cont = 0
+
+for x in range(15):
+    n = int(input())
+    vetor.append(n)
+
+while cont < len(vetor):
+    if (vetor[cont] % 2 == 0) and (aux01 != 6):
+        par.append(vetor[cont])
+        vetor.remove(vetor[cont])
+        aux01 += 1
+    elif (vetor[cont] % 2 != 0) and (aux02 != 6):
+        impar.append(vetor[cont])
+        vetor.remove(vetor[cont])
+        aux02 += 1
+    else:
+        cont += 1
+
+    if aux01 == 5:
+        pares()
+        aux01 += 1
+
+    elif aux02 == 5:
+        impares()
+        aux02 += 1
+
+aux01 = 0
+aux02 = 0
+
+for imp in range(len(vetor)):
+    if vetor[imp] % 2 != 0:
+        print('impar[{}] = {}'.format(aux01, vetor[imp]))
+        aux01 += 1
+    if aux01 == 5:
+        aux01 = 0
+
+for p in range(len(vetor)):
+    if (vetor[p] % 2 == 0) and (vetor[p] != 0):
+        print('par[{}] = {}'.format(aux02, vetor[p]))
+        aux02 += 1
+    if aux02 == 5:
+        aux02 = 0

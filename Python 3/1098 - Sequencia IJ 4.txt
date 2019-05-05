@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Sequencia IJ 4
+
+n = int(0)
+i = int(0)
+cont = 0
+
+while i <= 2:
+    for j in range(1, 4):
+        j += n
+        if cont != 0:
+            print('I={:.1f} J={:.1f}'.format(i, j))
+        else:
+            print('I={:.0f} J={:.0f}'.format(i, j))
+    n += 0.2
+    i += 0.2
+    cont += 1
+    if cont == 5:
+        cont = 0

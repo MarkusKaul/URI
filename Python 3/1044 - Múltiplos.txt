@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Multiplos
+texto = str(input()).split()
+n1 = int(texto[0])
+n2 = int(texto[1])
+
+if n1 <= n2:
+    multi = n1
+else:
+    multi = n2
+
+if (n1 % multi == 0) and (n2 % multi == 0):
+    print('Sao Multiplos')
+else:
+    print('Nao sao Multiplos')

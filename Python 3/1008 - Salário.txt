@@ -1,0 +1,11 @@
+nf = int(input()) #número funcionário
+
+ht = int(input()) #horas trabalhadas
+
+sf = float(input()) #horas ganhas
+
+salario = ht * sf
+
+print('NUMBER = {}'.format(nf))
+
+print('SALARY = U$ {:.2f}'.format(salario))

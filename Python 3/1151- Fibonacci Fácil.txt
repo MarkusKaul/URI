@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Fibonacci Fácil
+
+n = int(input())
+fi = [0, 1]
+soma = 0
+for x in range(2, n):
+        soma = fi[x - 2] + fi[x - 1]
+        fi.append(soma)
+
+for y in range(len(fi) - 1):
+    print(fi[y], end=' ')
+print(fi[len(fi) - 1])

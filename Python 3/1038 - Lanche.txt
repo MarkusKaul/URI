@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Lanche
+texto = str(input())
+textoq = texto.split()
+cod = int(textoq[0])
+quant = int(textoq[1])
+preco = [4.00, 4.50, 5.00, 2.00, 1.50]
+total = preco[cod - 1] * quant
+print('Total: R$ {:.2f}'.format(total))

@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Positivos e Média
+
+numeros = []
+cont = 0
+media = 0
+
+for x in range(6):
+    a = float(input())
+    numeros.append(a)
+
+for x in range(len(numeros)):
+    if numeros[x] > 0:
+        cont = cont + 1
+        media = media + numeros[x]
+
+media = media/cont
+print('{} valores positivos'.format(cont))
+print('{:.1f}'.format(media))

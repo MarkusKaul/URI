@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Dividindo C por Y
+n = int(input())
+lista = []
+
+for z in range(n):
+    w = str(input()).split()
+    x = float(w[0])
+    y = float(w[1])
+    lista.append([x, y])
+
+for z in range(len(lista)):
+    if lista[z][1] == 0:
+        print('divisao impossivel')
+    else:
+        print(lista[z][0] / lista[z][1])

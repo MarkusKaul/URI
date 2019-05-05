@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Grenais
+
+x = 1
+granal = [1]
+grenais = []
+inter = 0
+gremio = 0
+empate = 0
+
+while x != 2:
+    p = str(input()).split()
+    i = int(p[0])
+    g = int(p[1])
+    grenais.append([i, g])
+    x = int(input())
+    granal.append(x)
+
+for y in range(len(grenais)):
+    if grenais[y][0] > grenais[y][1]:
+        inter += 1
+    elif grenais[y][0] < grenais[y][1]:
+        gremio += 1
+    else:
+        empate += 1
+
+for z in range(len(granal) - 1):
+    print('Novo grenal (1-sim 2-nao)')
+
+print('{} grenais'.format(len(grenais)))
+print('Inter:{}'.format(inter))
+print('Gremio:{}'.format(gremio))
+print('Empates:{}'.format(empate))
+if inter > gremio:
+    print('Inter venceu mais')
+elif gremio > inter:
+    print('Gremio venceu mais')
+else:
+    print('Nao houve vencedor')

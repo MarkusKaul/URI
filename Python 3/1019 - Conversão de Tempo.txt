@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+#Conversão de tempo
+horaS = 3600
+minutoS = 60
+
+tempoS = int(input())
+
+hora = tempoS // horaS
+
+tempoS = tempoS - (hora * horaS)
+
+minuto = tempoS // minutoS
+
+tempoS = tempoS - (minuto * minutoS)
+
+print('{}:{}:{}'.format(hora,minuto,tempoS))

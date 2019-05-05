@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Múltiplos de 13
+
+a = int(input())
+b = int(input())
+soma = 0
+if a > b:
+    a, b = b, a
+
+
+for x in range(a, b + 1):
+    if x % 13 != 0:
+        soma += x
+
+print(soma)

@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Pares entre Cinco Números
+numeros = []
+cont = 0
+
+for x in range(5):
+    a = float(input())
+    numeros.append(a)
+
+for x in range(len(numeros)):
+    if numeros[x] % 2 == 0:
+        cont = cont + 1
+
+print('{} valores pares'.format(cont))

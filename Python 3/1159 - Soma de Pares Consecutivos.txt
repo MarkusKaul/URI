@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Soma de Pares Consecutivos
+
+n = 1
+lista = []
+soma = 0
+
+while n != 0:
+    n = int(input())
+    lista.append(n)
+
+for x in range(len(lista) - 1):
+    aux = 0
+    while aux < 5:
+        if lista[x] % 2 == 0:
+            soma += lista[x]
+            aux += 1
+        lista[x] += 1
+    print(soma)
+    soma = 0

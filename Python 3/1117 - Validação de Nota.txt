@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Validação de Nota
+cont_nota = 0
+notas = []
+notas_validas = []
+
+while cont_nota < 2:
+    nota = float(input())
+    notas.append(nota)
+    if (nota >= 0) and (nota <= 10):
+        cont_nota += 1
+
+for x in range(len(notas)):
+    if (notas[x] >= 0) and (notas[x] <= 10):
+        notas_validas.append(notas[x])
+    else:
+        print('nota invalida')
+
+print('media = {:.2f}'.format((notas_validas[0] + notas_validas[1]) / 2))

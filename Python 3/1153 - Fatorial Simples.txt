@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Fatorial Simples
+
+n = int(input())
+fat = 1
+for x in range(1, n + 1):
+    fat *= x
+print(fat)

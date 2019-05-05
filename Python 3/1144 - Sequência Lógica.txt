@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Sequência Lógica
+
+n = int(input())
+
+for x in range(1, n + 1):
+    z = x
+    for y in range(2):
+        print(x, end=' ')
+        x *= z
+    print(x)
+    x = z
+    print(x, end=' ')
+    x = (x * z)
+    print(x + 1, end=' ')
+    x = (x * z)
+    print(x + 1)

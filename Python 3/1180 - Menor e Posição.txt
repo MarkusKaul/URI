@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Menor e Posição
+
+n = int(input())
+x = []
+numeros = str(input()).split()
+menor = 1001
+posicao = 0
+
+for y in range(n):
+    x.append(int(numeros[y]))
+
+for w in range(len(x)):
+    if x[w] < menor:
+        menor = x[w]
+        posicao = w
+
+print('Menor valor: {}'.format(menor))
+print('Posicao: {}'.format(posicao))

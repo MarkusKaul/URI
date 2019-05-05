@@ -1,0 +1,8 @@
+
+d = int(input())
+
+
+td = d * 2
+
+
+print('{} minutos'.format(td))

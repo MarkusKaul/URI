@@ -1,0 +1,22 @@
+text1 = str(input())
+
+text2 = str(input())
+
+textq1 = text1.split()
+
+textq2 = text2.split()
+
+
+x1 = float(textq1[0])
+
+y1 = float(textq1[1])
+
+
+x2 = float(textq2[0])
+
+y2 = float(textq2[1])
+
+
+d = (((x2 - x1)**2) + ((y2 - y1)**2))**(1/2)
+
+print('{:.4f}'.format(d))

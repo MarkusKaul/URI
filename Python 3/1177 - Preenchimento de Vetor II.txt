@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Preenchimento de Vetor II
+
+t = int(input())
+v = []
+cont = 0
+
+while len(v) != 1000:
+    v.append(cont)
+    cont += 1
+    if cont == t:
+        cont = 0
+
+for x in range(len(v)):
+    print('N[{}] = {}'.format(x, v[x]))

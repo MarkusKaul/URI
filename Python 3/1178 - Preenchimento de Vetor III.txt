@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Preenchimento de Vetor III
+
+n = float(input())
+
+vetor = [n]
+
+for x in range(100):
+    n = vetor[x] / 2
+    vetor.append(n)
+    print('N[{}] = {:.4f}'.format(x, vetor[x]))

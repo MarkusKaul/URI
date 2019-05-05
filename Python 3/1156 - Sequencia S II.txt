@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Sequência S II
+
+s = 1
+d = 2
+
+for x in range(3, 39, 2):
+    s = s + (x/d)
+    d += d
+
+print('{:.2f}'.format(s))

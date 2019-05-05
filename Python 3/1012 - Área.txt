@@ -1,0 +1,34 @@
+pi = 3.14159
+
+texto = str(input())
+
+textoq = texto.split()
+
+
+a = float(textoq[0])
+
+b = float(textoq[1])
+
+c = float(textoq[2])
+
+
+areaTriangulo = ((a * c) / 2)
+
+areaCirculo = (pi * (c**2))
+
+areaTrapezio = (((a + b) * c) / 2)
+
+areaQuadrado = (b * b)
+
+areaRetangulo = (a * b)
+
+
+print('TRIANGULO: {:.3f}'.format(areaTriangulo))
+
+print('CIRCULO: {:.3f}'.format(areaCirculo))
+
+print('TRAPEZIO: {:.3f}'.format(areaTrapezio))
+
+print('QUADRADO: {:.3f}'.format(areaQuadrado))
+
+print('RETANGULO: {:.3f}'.format(areaRetangulo))

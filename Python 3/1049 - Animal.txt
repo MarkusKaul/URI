@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Animal
+carcter1 = str(input())
+carcter2 = str(input())
+carcter3 = str(input())
+
+if carcter1 == 'vertebrado':
+    if carcter2 == 'ave':
+        if carcter3 == 'carnivoro':
+            print('aguia')
+        else:
+            print('pomba')
+    else:
+        if carcter3 == 'onivoro':
+            print('homem')
+        else:
+            print('vaca')
+else:
+    if carcter2 == 'inseto':
+        if carcter3 == 'hematofago':
+            print('pulga')
+        else:
+            print('lagarta')
+    else:
+        if carcter3 == 'hematofago':
+            print('sanguessuga')
+        else:
+            print('minhoca')

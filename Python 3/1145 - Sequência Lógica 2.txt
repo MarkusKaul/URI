@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Sequência Lógica
+
+n = str(input()).split()
+x = int(n[0])
+y = int(n[1])
+cont = 0
+for y in range(1, y + 1):
+        cont += 1
+        if cont == x:
+            print(y)
+            cont = 0
+        else:
+            print(y, end=' ')

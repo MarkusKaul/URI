@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Média 3
+texto = str(input())
+textoq = texto.split()
+n1 = float(textoq[0])
+n2 = float(textoq[1])
+n3 = float(textoq[2])
+n4 = float(textoq[3])
+mediaFinal = round(((n1 * 2.0) + (n2 * 3.0) + (n3 * 4.0) + n4) / 10.0, 1)
+msg = ['Aluno aprovado.', 'Aluno reprovado.', 'Aluno em exame.']
+exibir = []
+
+exibir.insert(0, 'Media: {:.1f}'.format(mediaFinal))
+if mediaFinal >= 7.0:
+    exibir.insert(1, msg[0])
+elif mediaFinal < 5.0:
+    exibir.insert(1, msg[1])
+elif (mediaFinal >= 5.0) and (mediaFinal <= 6.9):
+    exibir.insert(1, msg[2])
+    n5 = float(input())
+    mediaFinal = (mediaFinal + n5) / 2
+    exibir.insert(2, 'Nota do exame: {:.1f}'.format(n5))
+    if mediaFinal >= 5.0:
+        exibir.insert(3, msg[0])
+    else:
+        exibir.insert(3, msg[1])
+    exibir.insert(4, 'Media final: {:.1f}'.format(mediaFinal))
+
+for saida in exibir:
+    print(saida)

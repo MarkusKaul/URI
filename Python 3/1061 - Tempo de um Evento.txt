@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Tempo de um Evento
+
+w = 0
+x = 0
+y = 0
+z = 0
+
+diaI = str(input()).split()
+horaI = str(input()).split()
+diaF = str(input()).split()
+horaF = str(input()).split()
+
+diaInicio = int(diaI[1])
+diaFinal = int(diaF[1])
+horaInicial = [int(horaI[0]), int(horaI[2]), int(horaI[4])]
+horaFinal = [int(horaF[0]), int(horaF[2]), int(horaF[4])]
+
+if horaInicial[0] > horaFinal[0]:
+    w = diaFinal - diaInicio - 1
+else:
+    w = diaFinal - diaInicio
+
+
+while horaInicial[2] != horaFinal[2]:
+    horaInicial[2] = horaInicial[2] + 1
+    z = z + 1
+    if horaInicial[2] == 60:
+        horaInicial[2] = 0
+        horaInicial[1] = horaInicial[1] + 1
+
+while horaInicial[1] != horaFinal[1]:
+    horaInicial[1] = horaInicial[1] + 1
+    y = y + 1
+    if horaInicial[1] == 60:
+        horaInicial[1] = 0
+        horaInicial[0] = horaInicial[0] + 1
+
+while horaInicial[0] != horaFinal[0]:
+    horaInicial[0] = horaInicial[0] + 1
+    x = x + 1
+    if horaInicial[0] == 24:
+        horaInicial[0] = 0
+
+
+print('{} dia(s)'.format(w))
+print('{} hora(s)'.format(x))
+print('{} minuto(s)'.format(y))
+print('{} segundo(s)'.format(z))

@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Sequencia IJ 3
+n = 7
+r = 4
+for i in range(1, 10, 2):
+    for j in range(n, r, -1):
+        print('I={} J={}'.format(i, j))
+    n, r = r + 5, n - 1

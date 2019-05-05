@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Senha Fixa
+senha = 2002
+tentativa = 0
+historico = []
+
+while tentativa != senha:
+    tentativa = int(input())
+    if tentativa != senha:
+        historico.append('Senha Invalida')
+    else:
+        historico.append('Acesso Permitido')
+
+for x in range(len(historico)):
+    print(historico[x])

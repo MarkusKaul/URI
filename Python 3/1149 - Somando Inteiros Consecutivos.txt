@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Somando Inteiros Consecutivos
+
+t = str(input()).split()
+a = int(t[0])
+n = int(t[len(t) - 1])
+soma = 0
+
+for i in range(n):
+    soma = soma + (a + i)
+
+print(soma)

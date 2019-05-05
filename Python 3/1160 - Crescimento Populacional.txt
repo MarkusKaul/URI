@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Crescimento Populacional
+
+n = int(input())
+casos = []
+ano = 0
+
+for x in range(n):
+    texto = str(input()).split()
+    casos.append([int(texto[0]), int(texto[1]), float(texto[2]), float(texto[3])])
+
+for y in range(len(casos)):
+    cresci01 = ((casos[y][0] * casos[y][2]) // 100)
+    cresci02 = ((casos[y][1] * casos[y][3]) // 100)
+    while casos[y][0] <= casos[y][1]:
+        casos[y][0] = round(casos[y][0] + ((casos[y][0] * casos[y][2]) // 100))
+        casos[y][1] = round(casos[y][1] + ((casos[y][1] * casos[y][3]) // 100))
+        ano += 1
+        if ano > 100:
+            break
+
+    if ano > 100:
+        print('Mais de 1 seculo.')
+    else:
+        print('{} anos.'.format(ano))
+    ano = 0

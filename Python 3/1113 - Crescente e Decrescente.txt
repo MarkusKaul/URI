@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Crescente e Decrescente
+x = 0
+y = 1
+lista = []
+while x != y:
+    n = str(input()).split()
+    x = int(n[0])
+    y = int(n[1])
+    lista.append([x, y])
+
+for z in range(len(lista) - 1):
+    if lista[z][0] < lista[z][1]:
+        print('Crescente')
+    else:
+        print('Decrescente')

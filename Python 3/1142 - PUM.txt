@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# PUM
+x = 1
+y = 4
+n = int(input())
+
+for z in range(n):
+    for w in range(x, y):
+        print(w, end=' ')
+    print('PUM')
+    x += 4
+    y += 4

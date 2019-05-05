@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Área Superior
+
+matriz = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+
+t = str(input())
+soma = 0
+cont1 = 1
+cont2 = 11
+media = 0
+
+for x in range(len(matriz)):
+    for y in range(len(matriz)):
+        n = float(input())
+        matriz[x][y] = n
+
+for z in range(5):
+    for w in range(cont1, cont2):
+        soma += matriz[z][w]
+        media += 1
+    cont1 += 1
+    cont2 -= 1
+
+if t == 'S':
+    print('{:.1f}'.format(soma))
+else:
+    print('{:.1f}'.format(soma / media))

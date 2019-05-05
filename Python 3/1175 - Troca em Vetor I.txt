@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Troca em Vetor I
+
+n = []
+aux = 0
+
+for x in range(20):
+    a = int(input())
+    n.append(a)
+
+for y in range(10):
+    aux += 1
+    n[y], n[len(n) - aux] = n[len(n) - aux], n[y]
+
+for z in range(len(n)):
+    print('N[{}] = {}'.format(z, n[z]))

@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Pares, Ímpares, Positivos e Negativos
+
+numeros = []
+impar = 0
+par = 0
+positivos = 0
+negativos = 0
+
+for x in range(5):
+    a = float(input())
+    numeros.append(a)
+
+for x in range(len(numeros)):
+    if numeros[x] > 0:
+        positivos = positivos + 1
+    if numeros[x] < 0:
+        negativos = negativos + 1
+    if numeros[x] % 2 == 0:
+        par = par + 1
+    else:
+        impar = impar + 1
+
+print('{} valor(es) par(es)'.format(par))
+print('{} valor(es) impar(es)'.format(impar))
+print('{} valor(es) positivo(s)'.format(positivos))
+print('{} valor(es) negativo(s)'.format(negativos))

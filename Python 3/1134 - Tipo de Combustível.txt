@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+#  Tipo de Combustível
+
+cod = 1
+alcool = 0
+gasolina = 0
+diesel = 0
+
+while cod != 4:
+    cod = int(input())
+    if cod == 1:
+        alcool += 1
+    elif cod == 2:
+        gasolina += 1
+    elif cod == 3:
+        diesel += 1
+    elif cod == 4:
+        break
+
+print('MUITO OBRIGADO')
+print('Alcool: {}'.format(alcool))
+print('Gasolina: {}'.format(gasolina))
+print('Diesel: {}'.format(diesel))

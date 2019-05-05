@@ -1,0 +1,87 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Notas e Moedas
+
+
+cedulas = float(input())
+
+cedula100 = int(cedulas // 100)
+
+cedulas = cedulas - (cedula100 * 100)
+
+cedula50 = int(cedulas // 50)
+
+cedulas = cedulas - (cedula50 * 50)
+
+cedula20 = int(cedulas // 20)
+
+cedulas = cedulas - (cedula20 * 20)
+
+cedula10 = int(cedulas // 10)
+
+cedulas = cedulas - (cedula10 * 10)
+
+cedulas = round(cedulas, 3)
+
+cedula5 = int(cedulas // 5)
+
+cedulas = cedulas - (cedula5 * 5)
+
+cedula2 = int(cedulas // 2)
+
+cedulas = cedulas - (cedula2 * 2)
+
+# Moedas
+cedulas = round(cedulas, 2)
+
+moeda1 = int(cedulas // 1)
+
+cedulas = cedulas - moeda1
+
+cedulas = round(cedulas, 2)
+
+moeda050 = int(cedulas // 0.50)
+
+cedulas = cedulas - (moeda050 * 0.50)
+
+cedulas = round(cedulas, 2)
+
+moeda025 = int(cedulas // 0.25)
+
+cedulas = cedulas - (moeda025 * 0.25)
+
+cedulas = round(cedulas, 2)
+
+moeda010 = int(cedulas // 0.10)
+
+cedulas = cedulas - (moeda010 * 0.10)
+
+cedulas = round(cedulas, 2)
+
+moeda005 = int(cedulas // 0.05)
+
+cedulas = cedulas - (moeda005 * 0.05)
+
+cedulas = round(cedulas, 2)
+
+moeda001 = int(cedulas / 0.01)
+
+print('NOTAS:')
+print('{} nota(s) de R$ 100.00'.format(cedula100))
+print('{} nota(s) de R$ 50.00'.format(cedula50))
+print('{} nota(s) de R$ 20.00'.format(cedula20))
+print('{} nota(s) de R$ 10.00'.format(cedula10))
+print('{} nota(s) de R$ 5.00'.format(cedula5))
+print('{} nota(s) de R$ 2.00'.format(cedula2))
+print('MOEDAS:')
+print('{} moeda(s) de R$ 1.00'.format(moeda1))
+print('{} moeda(s) de R$ 0.50'.format(moeda050))
+print('{} moeda(s) de R$ 0.25'.format(moeda025))
+print('{} moeda(s) de R$ 0.10'.format(moeda010))
+print('{} moeda(s) de R$ 0.05'.format(moeda005))
+print('{} moeda(s) de R$ 0.01'.format(moeda001))

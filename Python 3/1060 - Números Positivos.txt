@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Números Positivos
+numeros = []
+cont = 0
+a = float(input())
+b = float(input())
+c = float(input())
+d = float(input())
+e = float(input())
+f = float(input())
+numeros.append(a)
+numeros.append(b)
+numeros.append(c)
+numeros.append(d)
+numeros.append(e)
+numeros.append(f)
+
+for x in range(len(numeros)):
+    if numeros[x] > 0:
+        cont = cont + 1
+print('{} valores positivos'.format(cont))

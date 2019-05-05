@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Número Primo
+
+n = int(input())
+primo = []
+
+for z in range(n):
+    x = int(input())
+    primo.append(x)
+
+for w in range(len(primo)):
+    aux = 0
+    for y in range(1, primo[w] + 1):
+        if primo[w] % y == 0:
+            aux += 1
+    if aux == 2:
+        print('{} eh primo'.format(primo[w]))
+    else:
+        print('{} nao eh primo'.format(primo[w]))

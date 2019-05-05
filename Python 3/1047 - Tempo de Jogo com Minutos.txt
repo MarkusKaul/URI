@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Tempo de Jogo com Minutos
+tempo = str(input()).split()
+tempo_inicial = int(tempo[0])
+tempo_final = int(tempo[2])
+minuto_inicial = int(tempo[1])
+minuto_final = int(tempo[3])
+tempo_jogo = 0
+minuto_jogo = 0
+
+while minuto_inicial != minuto_final:
+    minuto_jogo = minuto_jogo + 1
+    minuto_inicial = minuto_inicial + 1
+    if minuto_inicial == 60:
+        minuto_inicial = 0
+        tempo_inicial = tempo_inicial + 1
+
+while tempo_inicial != tempo_final:
+    tempo_jogo = tempo_jogo + 1
+    tempo_inicial = tempo_inicial + 1
+    if tempo_inicial == 24:
+        tempo_inicial = 0
+
+if (tempo_jogo == 0) and (minuto_jogo == 0):
+    tempo_jogo = 24
+
+print('O JOGO DUROU {} HORA(S) E {} MINUTO(S)'.format(tempo_jogo, minuto_jogo))

@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Várias notas Com Validação
+
+x = 1
+notas = []
+notas_validas = []
+notas_invalidas = []
+opc = [1]
+cont_nota = 0
+
+while x != 2:
+    if x == 1:
+        cont_nota = 0
+        while cont_nota < 2:
+            nota = float(input())
+            notas.append(nota)
+            if (nota >= 0) and (nota <= 10):
+                cont_nota += 1
+    x = int(input())
+    opc.append(x)
+for y in range(len(opc) - 1):
+    if opc[y] == 1:
+        cont_nota = 0
+        cont = 0
+        while (cont_nota < 2) or (cont == len(notas) - 1):
+            if (notas[cont] >= 0) and (notas[cont] <= 10):
+                notas_validas.append(notas[cont])
+                cont_nota += 1
+            else:
+                print('nota invalida')
+                notas_invalidas.append(notas[cont])
+            cont += 1
+        for z in range(len(notas_invalidas)):
+            notas.remove(notas_invalidas[z])
+        notas.remove(notas_validas[0])
+        notas.remove(notas_validas[1])
+        print('media = {:.2f}'.format((notas_validas[0] + notas_validas[1]) / 2))
+    print('novo calculo (1-sim 2-nao)')
+    notas_validas = []
+    notas_invalidas = []
