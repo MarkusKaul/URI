@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main(){
+    int mult2 = 0, mult3 = 0, mult4 = 0, mult5 = 0, quant, n;
+    cin >> quant;
+    for(int cont = 0; cont < quant; cont++){
+        cin >> n;
+        if(n % 2 == 0){
+            mult2++;
+        }
+        if(n % 3 == 0){
+            mult3++;
+        }
+        if(n % 4 == 0){
+            mult4++;
+        }
+        if(n % 5 == 0){
+            mult5++;
+        }
+    }
+    cout << mult2 << " Multiplo(s) de 2" << endl;
+    cout << mult3 << " Multiplo(s) de 3" << endl;
+    cout << mult4 << " Multiplo(s) de 4" << endl;
+    cout << mult5 << " Multiplo(s) de 5" << endl;
+
+
+}

@@ -1,0 +1,117 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct nodo{
+    int info;
+    struct nodo *esq;
+    struct nodo *dir;
+} Nodo;
+
+typedef struct arv_bb{
+    Nodo *raiz;
+} Arv_bb;
+
+using namespace std;
+
+Nodo *insere_no(Nodo *raiz, int info);
+void abb_insere(Arv_bb* arv, int info);
+Arv_bb *cria_arvbb();
+void libera_nodo(Nodo* no);
+void libera_arv(Arv_bb* raiz);
+void imprime_pre(Nodo* raiz);
+void imprime_in(Nodo* raiz);
+void imprime_pos(Nodo* raiz);
+
+int main()
+{
+    int casos, quantValores, info, c = 1;
+    scanf("%d", &casos);
+    while(casos > 0){
+        scanf("%d", &quantValores);
+        Arv_bb* arv = cria_arvbb();
+        for(int cont = 0; cont < quantValores; cont++){
+            scanf("%d", &info);
+            abb_insere(arv, info);
+        }
+        printf("Case %d:\n", c);
+        printf("Pre.:");
+        imprime_pre(arv->raiz);
+        printf("\nIn..:");
+        imprime_in(arv->raiz);
+        printf("\nPost:");
+        imprime_pos(arv->raiz);
+        printf("\n\n");
+        libera_arv(arv);
+        --casos;
+        ++c;
+    }
+
+}
+
+Arv_bb *cria_arvbb(){
+    Arv_bb *arv = (Arv_bb*) malloc(sizeof(Arv_bb));
+    arv->raiz = NULL;
+    return arv;
+}
+
+
+void abb_insere(Arv_bb* arv, int info){
+    arv->raiz = insere_no(arv->raiz, info);
+}
+
+Nodo *insere_no(Nodo *raiz, int info){
+    if(raiz == NULL){
+        raiz = (Nodo*) malloc(sizeof(Nodo));
+        raiz->info = info;
+        raiz->esq = raiz->dir = NULL;
+    }
+    else if (info < raiz->info){
+        raiz->esq = insere_no(raiz->esq, info);
+    }
+    else{
+        raiz->dir = insere_no(raiz->dir, info);
+    }
+    return raiz;
+}
+
+void libera_arv(Arv_bb* raiz){
+    libera_nodo(raiz->raiz);
+    free(raiz);
+}
+
+void libera_nodo(Nodo* no){
+    if(no != NULL){
+        libera_nodo(no->esq);
+        libera_nodo(no->dir);
+        free(no);
+    }
+}
+
+void imprime_pre(Nodo* raiz){
+    if(raiz != NULL){
+        printf(" %d", raiz->info);
+        imprime_pre(raiz->esq);
+        imprime_pre(raiz->dir);
+    }
+}
+
+void imprime_in(Nodo* raiz){
+    if(raiz != NULL){
+        imprime_in(raiz->esq);
+        printf(" %d", raiz->info);
+        imprime_in(raiz->dir);
+    }
+}
+
+void imprime_pos(Nodo* raiz){
+    if(raiz != NULL){
+        imprime_pos(raiz->esq);
+        imprime_pos(raiz->dir);
+        printf(" %d", raiz->info);
+    }
+}
+
+
+
+

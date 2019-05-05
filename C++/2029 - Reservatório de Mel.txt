@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+    float volume, diametro, area, altura;
+    while(cin >> volume >> diametro){
+        area = 3.14 * ((diametro/2) * (diametro/2));
+        altura = volume / (3.14* ((diametro/2) * (diametro/2)));
+
+        cout << "ALTURA = " << setprecision(2) << fixed << altura << endl;
+        cout << "AREA = " << setprecision(2) << fixed << area << endl;
+
+    }
+}

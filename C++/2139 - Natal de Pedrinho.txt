@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main(){
+   int dias[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 25};
+   int diasAno = 360;
+   int mes, dia, faltam = 0, total;
+
+   while(cin >> mes >> dia){
+        total = 0;
+        if(mes == 12 && dia == 25){
+            cout << "E natal!" << endl;
+        } else if(mes == 12 && dia > 25){
+            cout << "Ja passou!" << endl;
+        } else if(mes == 12 && dia == 24){
+            cout << "E vespera de natal!" << endl;
+        } else {
+
+            for(int cont = mes; cont <= 12; cont++){
+                    total += dias[cont - 1];
+            }
+            total -= dia;
+            cout << "Faltam " << total << " dias para o natal!" << endl;
+        }
+   }
+}

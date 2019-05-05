@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main(){
+    int notas[] = {2, 5, 10, 20, 50, 100};
+    int m, n, troco, nota;
+
+    cin >> n >> m;
+    while(n != 0 && m != 0){
+        nota = 0;
+        troco = m - n;
+        for(int cont = 5; cont >= 0; cont--){
+            if(troco / notas[cont] > 0){
+                nota++;
+                troco -= notas[cont];
+            }
+        }
+
+        if(nota == 2){
+            cout << "possible" << endl;
+        } else {
+            cout << "impossible" << endl;
+        }
+        cin >> n >> m;
+    }
+}

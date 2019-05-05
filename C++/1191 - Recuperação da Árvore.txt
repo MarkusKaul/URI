@@ -1,0 +1,54 @@
+#include <iostream>
+#include <stdio.h>
+#include <queue>
+#include <string.h>
+using namespace std;
+
+int procura(queue<char>*fila_pre, queue<char> fila_in){
+    if(fila_in.empty()){
+       return 0;
+    }
+    queue<char> fila_aux;
+    char raiz = fila_pre->front();
+    fila_pre->pop();
+    while(fila_in.front() != raiz){
+        fila_aux.push(fila_in.front());
+        fila_in.pop();
+    }
+    fila_in.pop();
+
+    procura(fila_pre, fila_aux);
+    procura(fila_pre, fila_in);
+
+    printf("%c", raiz);
+}
+
+void libera_filas(queue<char>*f2){
+    while(!f2->empty()){
+        f2->pop();
+    }
+}
+
+int main()
+{
+    queue<char>f1;
+    queue<char>f2;
+    char v1[27], v2[27], raiz;
+    int i;
+
+    while(1){
+        if(scanf(" %s %[^\n]s", &v1, &v2)== EOF){
+            break;
+        }
+
+        for(i = 0; i <= strlen(v1)-1; i++){
+            f1.push(v1[i]);
+            f2.push(v2[i]);
+        }
+        //char raiz = f1.front();
+        procura(&f1,f2);
+        libera_filas(&f2);
+        printf("\n");
+    }
+
+}

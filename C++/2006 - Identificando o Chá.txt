@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int cha, palpite, acertos = 0;
+    cin >> cha;
+    for(int cont = 0; cont < 5; cont++){
+        cin >> palpite;
+        if(palpite == cha){
+            acertos++;
+        }
+    }
+    cout << acertos << endl;
+}

@@ -1,0 +1,155 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct nodo{
+    char info;
+    struct nodo *esq;
+    struct nodo *dir;
+} Nodo;
+
+typedef struct arv_bb{
+    Nodo *raiz;
+} Arv_bb;
+
+using namespace std;
+
+Nodo *insere_no(Nodo *raiz, char info);
+void abb_insere(Arv_bb* arv, char info);
+Arv_bb *cria_arvbb();
+void libera_nodo(Nodo* no);
+void libera_arv(Arv_bb* raiz);
+void imprime_pre(Nodo* raiz);
+void imprime_in(Nodo* raiz);
+void imprime_pos(Nodo* raiz);
+int busca_arv(Nodo* raiz, char info);
+int c;
+
+int main()
+{
+    char opc[8];
+    char info;
+    Arv_bb* arv = cria_arvbb();
+    while(cin >> opc){
+        c = 0;
+        if(!strcmp(opc, "I")){
+            cin >> info;
+            abb_insere(arv, info);
+        } else if(!strcmp(opc, "P")){
+            cin >> info;
+            if(busca_arv(arv->raiz, info)){
+                printf("%c existe\n", info);
+            } else {
+                printf("%c nao existe\n", info);
+            }
+        } else if(!strcmp(opc, "INFIXA")){
+            imprime_in(arv->raiz);
+            cout << endl;
+        } else if(!strcmp(opc, "PREFIXA")){
+            imprime_pre(arv->raiz);
+            cout << endl;
+        } else if(!strcmp(opc, "POSFIXA")){
+            imprime_pos(arv->raiz);
+            cout << endl;
+        }
+    }
+    libera_arv(arv);
+}
+
+Arv_bb *cria_arvbb(){
+    Arv_bb *arv = (Arv_bb*) malloc(sizeof(Arv_bb));
+    arv->raiz = NULL;
+    return arv;
+}
+
+
+void abb_insere(Arv_bb* arv, char info){
+    arv->raiz = insere_no(arv->raiz, info);
+}
+
+Nodo *insere_no(Nodo *raiz, char info){
+    if(raiz == NULL){
+        raiz = (Nodo*) malloc(sizeof(Nodo));
+        raiz->info = info;
+        raiz->esq = raiz->dir = NULL;
+    }
+    else if (info < raiz->info){
+        raiz->esq = insere_no(raiz->esq, info);
+    }
+    else{
+        raiz->dir = insere_no(raiz->dir, info);
+    }
+    return raiz;
+}
+
+int busca_arv(Nodo* raiz, char info){
+    int busca = 0;
+    if(raiz == NULL){
+        return 0;
+    } else if (info < raiz->info){
+        busca = busca_arv(raiz->esq, info);
+    } else if (info > raiz->info){
+        busca = busca_arv(raiz->dir, info);
+    } else {
+        return 1;
+    }
+
+    return busca;
+}
+
+void libera_arv(Arv_bb* raiz){
+    libera_nodo(raiz->raiz);
+    free(raiz);
+}
+
+void libera_nodo(Nodo* no){
+    if(no != NULL){
+        libera_nodo(no->esq);
+        libera_nodo(no->dir);
+        free(no);
+    }
+}
+
+void imprime_pre(Nodo* raiz){
+    if(raiz != NULL){
+        if(c == 0){
+            cout << raiz->info;
+            ++c;
+        } else {
+            cout << " " << raiz->info;
+        }
+        imprime_pre(raiz->esq);
+        imprime_pre(raiz->dir);
+    }
+}
+
+void imprime_in(Nodo* raiz){
+    if(raiz != NULL){
+        imprime_in(raiz->esq);
+        if(c == 0){
+            cout << raiz->info;
+            ++c;
+        } else {
+            cout << " " << raiz->info;
+        }
+        imprime_in(raiz->dir);
+    }
+}
+
+void imprime_pos(Nodo* raiz){
+    if(raiz != NULL){
+        imprime_pos(raiz->esq);
+        imprime_pos(raiz->dir);
+        if(c == 0){
+            cout << raiz->info;
+            ++c;
+        } else {
+            cout << " " << raiz->info;
+        }
+    }
+}
+
+
+
+

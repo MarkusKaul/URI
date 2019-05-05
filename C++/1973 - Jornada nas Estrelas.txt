@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    unsigned long long int n, i = 0, ovelhas = 0, estrelas = 0;
+    unsigned long long int *vetor;
+    scanf("%lld", &n);
+    vetor = malloc(sizeof(unsigned long long int) * n);
+    for(int cont = 0; cont < n; cont++){
+        scanf("%lld", &vetor[cont]);
+        ovelhas += vetor[cont];
+    }
+
+    while(i >= 0 && i < n){
+        if(vetor[i] != 0){
+             ovelhas--;
+        }
+
+        if(vetor[i] % 2 == 0){
+            if(vetor[i] != 0){
+                vetor[i]--;
+            }
+            i--;
+        } else {
+            if(vetor[i] != 0){
+                vetor[i]--;
+            }
+            i++;
+        }
+
+        if(i > estrelas){
+            estrelas++;
+        }
+    }
+
+    printf("%lld %lld\n", estrelas, ovelhas);
+}

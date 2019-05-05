@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main(){
+    int casos;
+    float seg;
+    string galopeira;
+    cin >> casos;
+    for(int cont = 0; cont < casos; cont++){
+        cin >> galopeira;
+        seg = galopeira.length() * 0.01;
+        cout << setprecision(2) << fixed << seg << endl;
+    }
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main(){
+    int n, h, m , o;
+    cin >> n;
+    for(int cont = 0; cont < n; cont++){
+        cin >> h >> m >> o;
+        cout << setfill('0') << setw(2) << h;
+        cout << ":";
+        cout << setfill('0') << setw(2) << m << " - A porta ";
+        if(o){
+            cout << "abriu!";
+        } else {
+            cout << "fechou!";
+        }
+        cout << endl;
+    }
+}

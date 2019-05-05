@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+    float valorTotal = 0, quant, p;
+    int cod;
+    cin >> p;
+    while(p > 0){
+        cin >> cod >> quant;
+        switch (cod){
+            case 1001:
+                valorTotal += (quant * 1.50);
+                break;
+            case 1002:
+                valorTotal += (quant * 2.50);
+                break;
+            case 1003:
+                valorTotal += (quant * 3.50);
+                break;
+            case 1004:
+                valorTotal += (quant * 4.50);
+                break;
+            case 1005:
+                valorTotal += (quant * 5.50);
+                break;
+        }
+        p--;
+    }
+    cout << setprecision(2) << fixed << valorTotal << endl;
+
+
+}

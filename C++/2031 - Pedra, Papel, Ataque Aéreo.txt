@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main(){
+    string j1, j2;
+    int n;
+    cin >> n;
+    for(int c = 0; c < n; c++){
+        cin >> j1 >> j2;
+        if(j1.compare(j2) == 0){
+            if(j1.compare("papel") == 0){
+                cout << "Ambos venceram" << endl;
+            } else if(j1.compare("pedra") == 0){
+                cout << "Sem ganhador" << endl;
+            } else {
+                cout << "Aniquilacao mutua" << endl;
+            }
+        } else if(j1.compare("papel") == 0){
+            cout << "Jogador 2 venceu" << endl;
+        } else if(j1.compare("ataque") == 0){
+            cout << "Jogador 1 venceu" << endl;
+        } else if(j1.compare("pedra") == 0){
+            if(j2.compare("papel") == 0){
+                cout << "Jogador 1 venceu" << endl;
+            } else {
+                cout << "Jogador 2 venceu" << endl;
+            }
+        }
+    }
+}

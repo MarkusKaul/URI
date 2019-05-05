@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+    int hora = 0, minutos = 0;
+    while(scanf("%d:%d", &hora, &minutos) != EOF){
+        int atraso = 0;
+        if(hora == 7 && minutos > 0){
+            atraso = minutos;
+        } else if(hora > 7){
+            atraso = ((++hora - 8) * 60) + minutos;
+        }
+        cout << "Atraso maximo: " << atraso << endl;
+    }
+}

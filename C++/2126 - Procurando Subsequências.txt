@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main(){
+    string subseq, seq;
+    int totalSub, caso = 1;
+    size_t found, medida, pos;
+    while(cin >> subseq >> seq){
+        totalSub = 0;
+        medida = 0;
+        pos = 0;
+        found = seq.find(subseq, medida);
+        if(found != string::npos){
+            medida = found + 1;
+            totalSub++;
+            pos = found + 1;
+            while(found != string::npos){
+                found = seq.find(subseq, medida);
+                if(found != string::npos){
+                    totalSub++;
+                    medida = found + 1;
+                    pos = found + 1;
+
+                }
+            }
+
+            cout << "Caso #" << caso << ":" << endl;
+            cout << "Qtd.Subsequencias: " << totalSub << endl;
+            cout << "Pos: " << pos << endl;
+        } else {
+            cout << "Caso #" << caso << ":" << endl;
+            cout << "Nao existe subsequencia" << endl;
+        }
+        cout << endl;
+        caso++;
+    }
+}
