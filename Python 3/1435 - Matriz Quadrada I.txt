@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Matriz Quadrada I
+
+
+def mostrar_matriz(m, ordi):
+    for li in range(ordi):
+        for c in range(ordi):
+            if c == ordi - 1:
+                print('{:>3}'.format(m[li][c]))
+            else:
+                print('{:>3}'.format(m[li][c]), end=' ')
+    print('')
+
+
+def criar_matriz(ordem):
+    matriz = []
+    resto = ordem % 2
+    inteiro = ordem // 2
+    intervalo = 0
+    if resto == 0:
+        ate_linha = inteiro
+    else:
+        ate_linha = resto + inteiro
+    for x in range(ate_linha):
+        linha = []
+        num = 0
+        for y in range(ordem):
+            if y <= intervalo:
+                num += 1
+            elif y >= (ordem - intervalo):
+                num -= 1
+            linha.append(num)
+        matriz.append(linha)
+        intervalo += 1
+
+    if ordem % 2 == 0:
+        for w in range(len(matriz) - 1, -1, -1):
+            matriz.append(matriz[w])
+    else:
+        for w in range(len(matriz) - 2, -1, -1):
+            matriz.append(matriz[w])
+    mostrar_matriz(matriz, ordem)
+
+
+ordem_matriz = []
+n = 1
+
+while n != 0:
+    n = int(input())
+    if n != 0 and n > 0:
+        ordem_matriz.append(n)
+
+for z in range(len(ordem_matriz)):
+    criar_matriz(ordem_matriz[z])

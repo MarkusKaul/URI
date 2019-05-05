@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Matriz Quadrada II
+
+
+def mostrar_matriz(m, ordi):
+    for li in range(ordi):
+        for c in range(ordi):
+            if c == ordi - 1:
+                print('{:>3}'.format(m[li][c]))
+            else:
+                print('{:>3}'.format(m[li][c]), end=' ')
+    print('')
+
+
+def criar_matriz(ordem):
+    matriz = []
+    num = 0
+    for x in range(ordem):
+        linha = []
+        cod = 0
+        num += 1
+        nu = num
+        for y in range(ordem):
+            linha.append(nu)
+            if nu == 1:
+                cod = 1
+
+            if cod == 1:
+                nu += 1
+            else:
+                nu -= 1
+        matriz.append(linha)
+
+    if ordem % 2 == 0:
+        for w in range(len(matriz) - 1, -1, -1):
+            matriz.append(matriz[w])
+    else:
+        for w in range(len(matriz) - 2, -1, -1):
+            matriz.append(matriz[w])
+    mostrar_matriz(matriz, ordem)
+
+
+ordem_matriz = []
+n = 1
+
+while n != 0:
+    n = int(input())
+    if n != 0 and n > 0:
+        ordem_matriz.append(n)
+
+for z in range(len(ordem_matriz)):
+    criar_matriz(ordem_matriz[z])

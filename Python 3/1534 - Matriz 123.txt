@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# Matriz123
+
+
+def criar_matriz(ordem):
+    matriz = []
+    secundaria = ordem
+    for li in range(ordem):
+        linha = []
+        secundaria -= 1
+        for c in range(ordem):
+            if c == secundaria:
+                linha.append(2)
+            elif li == c:
+                linha.append(1)
+            else:
+                linha.append(3)
+        matriz.append(linha)
+    mostrar_matriz(matriz)
+
+
+def mostrar_matriz(m):
+    for l in range(len(m)):
+        for c in range(len(m) - 1):
+            print(m[l][c], end='')
+        print(m[l][len(m)-1])
+
+
+ordem_matriz = []
+n = 3
+
+while True:
+    try:
+        n = int(input())
+    except EOFError:
+        break
+    ordem_matriz.append(n)
+
+for x in ordem_matriz:
+    criar_matriz(x)

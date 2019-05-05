@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+
+'''
+Escreva a sua solução aqui
+Code your solution here
+Escriba su solución aquí
+'''
+# VaiNaSort
+
+tentativas = []
+n = 1
+while n != 0:
+    n = int(input())
+    cont = 0
+    veri = 0
+    seguencia = ''
+    for w in range(n - 1):
+        seguencia += str(w + 1) + ' '
+    seguencia += str(n)
+    while (veri == 0) and (n > 0):
+        pedras = str(input())
+        cont += 1
+        if pedras == seguencia:
+            veri = 1
+            tentativas.append(cont)
+for z in range(len(tentativas)):
+    print(tentativas[z])

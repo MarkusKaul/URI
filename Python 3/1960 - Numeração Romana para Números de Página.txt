@@ -1,0 +1,40 @@
+def verif(texto, inter, ar):
+    if inter == 1:
+        texto = texto + str(ar[0])
+    elif inter == 2:
+        texto = texto + str(ar[1])
+    elif inter == 3:
+        texto = texto + str(ar[2])
+    elif inter == 4:
+        texto = texto + str(ar[3])
+    elif inter == 5:
+        texto = texto + str(ar[4])
+    elif inter == 6:
+        texto = texto + str(ar[5])
+    elif inter == 7:
+        texto = texto + str(ar[6])
+    elif inter == 8:
+        texto = texto + str(ar[7])
+    elif inter == 9:
+        texto = texto + str(ar[8])
+    return texto
+
+
+centenas = ["C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+dezenas = ["X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+unidades = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+romano = ''
+numero = int(input())
+
+inteiro = numero // 100
+resto = numero % 100
+
+romano = verif(romano, inteiro, centenas)
+
+inteiro = resto // 10
+resto = resto % 10
+
+romano = verif(romano, inteiro, dezenas)
+romano = verif(romano, resto, unidades)
+
+print("{}".format(romano))
