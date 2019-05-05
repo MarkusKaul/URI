@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int f, fatual = 1, fantigo = 0, fproximo = 0;
+
+    scanf("%d", &f);
+
+    if (f > 2){
+        printf("0 1 ");
+        do {
+            fproximo = fatual + fantigo;
+            fantigo = fatual;
+            printf("%d ", fproximo);
+            fatual = fproximo;
+            f--;
+            //printf("P: %d A: %d An: %d\n", fproximo, fatual, fantigo);
+        } while (f > 3);
+        printf("%d\n", fatual + fantigo);
+    } else {
+        if (f == 1){
+            printf("0\n");
+        } else {
+            printf("0 1\n");
+        }
+    }
+
+}

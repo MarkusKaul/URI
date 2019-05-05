@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void reorganizar(int *f, int a){
+    int cont = 0, i;
+    while(cont < a){
+        for(i = 0; i < a; i++){
+            if(f[i] < f[cont]){
+                int aux = f[cont];
+                f[cont] = f[i];
+                f[i] = aux;
+            }
+        }
+        cont++;
+    }
+}
+
+void imprimi_fila(int *f, int n){
+    int i;
+    for(i = 0; i < n; i++){
+        printf("[%d] ", f[i]);
+    }
+}
+
+int compara_filas(int *f, int *c, int aux){
+    int cont = 0, i;
+    for(i = 0; i < aux; i++){
+        if (f[i] == c[i]) cont++;
+    }
+    return cont;
+}
+
+void copiar_fila(int *f, int *c, int aux){
+    int i;
+    for(i = 0; i < aux; i++){
+        c[i] = f[i];
+    }
+}
+
+int main(){
+    int *fila_alunos, *cop;
+    int n, n_alunos;
+
+    scanf("%d", &n);
+    while(n > 0){
+        scanf("%d", &n_alunos);
+        int cont = 0, aux = n_alunos;
+        fila_alunos = (int*) malloc(sizeof(int) * n_alunos);
+        cop = (int*) malloc(sizeof(int) * n_alunos);
+        while(n_alunos > 0){
+            scanf("%d", &fila_alunos[cont]);
+            cont++;
+            n_alunos--;
+        }
+        copiar_fila(fila_alunos, cop, aux);
+        reorganizar(fila_alunos, aux);
+        int mud = compara_filas(fila_alunos, cop, aux);
+        //imprimi_fila(fila_alunos, aux);
+        //imprimi_fila(cop, aux);
+        printf("%d\n", mud);
+        free(fila_alunos);
+        n--;
+    }
+}

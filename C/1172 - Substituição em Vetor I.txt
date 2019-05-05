@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int v[10], n, cont = 0;
+
+    while (cont < 10){
+        scanf("%d", &n);
+        v[cont] = n;
+        if (v[cont] <= 0 ){
+            v[cont] = 1;
+        }
+        cont++;
+    }
+
+    cont = 0;
+    while(cont < 10){
+        printf("X[%d] = %d\n", cont, v[cont]);
+        cont++;
+    }
+}

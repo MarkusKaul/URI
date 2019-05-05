@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int n, numero, cont = 0, dentrodointervalo = 0, foradointervalo = 0;
+
+    scanf("%d", &n);
+
+    while (cont < n){
+        scanf("%d", &numero);
+        if (numero >= 10 && numero <= 20){
+            dentrodointervalo++;
+        } else {
+            foradointervalo++;
+        }
+        cont++;
+    }
+
+    printf("%d in\n", dentrodointervalo);
+    printf("%d out\n", foradointervalo);
+
+}

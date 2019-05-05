@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    float n[100];
+    int cont = 0;
+
+    while(cont < 100){
+        scanf("%f", &n[cont]);
+        if (n[cont] <= 10){
+            printf("A[%d] = %.1f\n", cont, n[cont]);
+        }
+        cont++;
+    }
+}

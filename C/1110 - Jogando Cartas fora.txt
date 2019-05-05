@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct pilha{
+    int topo;
+    int* vet;
+} Pilha;
+
+int* excluidos;
+
+Pilha* cria_pilha(int n){
+    Pilha* p = (Pilha*) malloc(sizeof(Pilha));
+    p->topo = 0;
+    p->vet = (int*) malloc(sizeof(int) * n);
+    excluidos = (int*) malloc(sizeof(int) * n);
+    return p;
+}
+
+void push(Pilha* p, int v){
+    while(v > 0){
+        p->vet[p->topo] = v;
+        p->topo++;
+        v--;
+    }
+}
+
+void imprime_pilha(Pilha* p, int tam){
+    printf("Discarded cards: ");
+    int i;
+    for(i = 0; i < tam-2; i++){
+        printf("%d, ", excluidos[i]);
+    }
+    printf("%d\n", excluidos[tam-2]);
+    printf("Remaining card: %d\n", p->vet[0]);
+}
+
+void organiza_pilha(Pilha* p){
+    int cont = p->topo-1;
+    while(cont > 0){
+        p->vet[cont] = p->vet[cont-1];
+        cont--;
+    }
+}
+
+void jogando_carta(Pilha* p){
+    int cont = 0, aux;
+    while(p->topo >= 1){
+        //imprime_pilha(p);
+        //printf("Excluindo numero\n");
+        excluidos[cont] = p->vet[p->topo-1];
+        p->topo--;
+        cont++;
+        aux = p->vet[p->topo-1];
+        if (p->topo > 0){
+            organiza_pilha(p);
+            p->vet[0] = aux;
+        }
+    }
+}
+
+int main(){
+    int n, c;
+    while (scanf("%d", &n)){
+        if (n <= 0) break;
+        Pilha* p = cria_pilha(n);
+        push(p, n);
+        jogando_carta(p);
+        imprime_pilha(p, n);
+        n--;
+    }
+
+}

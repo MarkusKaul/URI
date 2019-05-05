@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int x, cont = 0, n[100];
+
+    scanf("%d", &x);
+    while (cont < x) {
+            scanf("%d", &n[cont]);
+            cont++;
+    }
+
+    cont = 0;
+    while (cont < x){
+        int aux = 1;
+        int divisoes = 0;
+        while (aux <= n[cont]){
+            if (n[cont] % aux == 0){
+                divisoes++;
+            }
+            aux++;
+        }
+        if (divisoes <= 2){
+            printf("%d eh primo\n", n[cont]);
+        } else {
+            printf("%d nao eh primo\n", n[cont]);
+        }
+        cont++;
+    }
+}

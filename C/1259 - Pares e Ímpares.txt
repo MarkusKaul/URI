@@ -1,0 +1,119 @@
+#include <stdio.h>
+#define MAX 100001
+
+
+void quick_sort(int *tabela,int esq,int dir)
+{
+
+    int i = 0,j = 0;
+    int pivot,y;
+
+    i=esq; //inicio do array
+    j=dir; //recebe MAX
+    pivot = tabela[(esq+dir)/2];
+
+    do
+    {
+
+        while (tabela[i]<pivot && i<dir)
+            //(tabela[i]>pivot || i>dir)
+            i++;
+        while (tabela[j]>pivot && j>esq)
+            //(tabela[j]<pivot || j<esq)
+            j--;
+        if (i<=j)// (j>=i)
+        {
+            y= tabela[i];
+            // y= tabela[j];
+            tabela[i] = tabela[j];
+            //tabela[j] = tabela[i];
+            tabela[j] = y;
+            //tabela[i] = y;
+            i++;
+            j--;
+        }
+    }
+    while (i<=j);
+
+    if (esq<j)//recursividade, faz todo o processo novamente
+        quick_sort(tabela,esq,j);
+
+    if (i<dir)
+        quick_sort(tabela,i,dir);
+
+
+}
+
+void quick_sort_dec(int *tabela,int esq,int dir)
+{
+
+    int i = 0,j = 0;
+    int pivot,y;
+
+    i=esq; //inicio do array
+    j=dir; //recebe MAX
+    pivot = tabela[(esq+dir)/2];
+
+    do
+    {
+
+        //while (tabela[i]<pivot && i<dir)
+        while (tabela[i]>pivot || i>dir)
+            i++;
+        //while (tabela[j]>pivot && j>esq)
+        while (tabela[j]<pivot || j<esq)
+            j--;
+        //if (i<=j)
+        if (j>=i)
+        {
+            //y= tabela[i];
+            y= tabela[j];
+            //tabela[i] = tabela[j];
+            tabela[j] = tabela[i];
+            //tabela[j] = y;
+            tabela[i] = y;
+            i++;
+            j--;
+        }
+    }
+    while (i<=j);
+
+    if (esq<j)//recursividade, faz todo o processo novamente
+        quick_sort_dec(tabela,esq,j);
+
+    if (i<dir)
+        quick_sort_dec(tabela,i,dir);
+
+}
+
+
+int main(){
+    int n,n1, vet_par[MAX],par=0, vet_impar[MAX], impar=0;
+    int register i;
+    scanf("%d",&n);
+    for (i=0; i<n; i++){
+        scanf("%d",&n1);
+        if (n1%2==0)
+        {
+            vet_par[par]=n1;
+            par++;
+        }
+        else
+        {
+            vet_impar[impar]=n1;
+            impar++;
+        }
+    }
+
+    quick_sort(vet_par, 0, par-1);
+    quick_sort_dec(vet_impar, 0,impar-1);
+    for (i=0; i<par; i++){
+        printf("%d\n",vet_par[i]);
+    }
+     for (i=0; i<impar; i++){
+        printf("%d\n",vet_impar[i]);
+    }
+
+
+    return 0;
+}

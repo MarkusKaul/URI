@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int quantidadealunos, cont = 0, id = 0;
+    float  maior = 0;
+    long* matricula;
+    float* nota;
+
+    scanf("%d", &quantidadealunos);
+    matricula = (long*) malloc(sizeof(long) * quantidadealunos);
+    nota = (float*) malloc(sizeof(float) * quantidadealunos);
+
+    while (cont < quantidadealunos){
+        scanf("%ld %f", &matricula[cont], &nota[cont]);
+
+        if (nota[cont] > maior){
+            maior = nota[cont];
+            id = cont;
+        }
+
+        cont++;
+    }
+
+    if (maior >= 8.0) {
+        printf("%ld\n", matricula[id]);
+    } else {
+        printf("Minimum note not reached\n");
+    }
+}

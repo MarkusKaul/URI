@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int lesmas, velocidade, i;
+    while(scanf("%d", &lesmas) == 1){
+        if(lesmas == EOF){
+            break;
+        }
+        int maisrapida = 1;
+        for(i = 0; i < lesmas; i++){
+            scanf("%d", &velocidade);
+            if (velocidade > maisrapida){
+                maisrapida = velocidade;
+            }
+        }
+        if(maisrapida < 10) printf("1\n");
+        else if (maisrapida >= 10 && maisrapida < 20) printf("2\n");
+        else printf("3\n");
+    }
+}

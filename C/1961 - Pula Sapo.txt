@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int diferenca, i, atual, pulo_sapo, numero_canos, perdeu;
+    int* canos;
+    scanf("%d %d", &pulo_sapo, &numero_canos);
+
+    canos = (int*) malloc(sizeof(int) * numero_canos);
+    for (i = 0; i < numero_canos; i++) {
+        scanf("%d", &canos[i]);
+    }
+
+    for (atual = 0; atual <= numero_canos-2; atual++){
+        diferenca = abs(canos[atual] - canos[atual+1]);
+        //printf("Cano atual %d\nProximo Cano %d\nDiferenca %d\npulo %d\n", canos[atual], canos[atual+1], diferenca, pulo_sapo);
+        if (diferenca <= pulo_sapo){
+            perdeu = 0;
+        } else {
+            perdeu = 1;
+            break;
+        }
+    }
+
+    if (perdeu) {
+        printf("GAME OVER\n");
+    } else {
+        printf("YOU WIN\n");
+    }
+}

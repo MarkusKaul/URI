@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+    int cedula, cedulacopia, cedula100, cedula50, cedula20, cedula10, cedula5, cedula2, cedula1;
+
+    scanf("%d", &cedula);
+
+    cedulacopia = cedula;
+
+    cedula100 = cedula / 100;
+    cedula = cedula - (cedula100 * 100);
+
+    cedula50 = cedula / 50;
+    cedula = cedula - (cedula50 * 50);
+
+    cedula20 = cedula / 20;
+    cedula = cedula - (cedula20 * 20);
+
+    cedula10 = cedula / 10;
+    cedula = cedula - (cedula10 * 10);
+
+    cedula5 = cedula / 5;
+    cedula = cedula - (cedula5 * 5);
+
+    cedula2 = cedula / 2;
+    cedula = cedula - (cedula2 * 2);
+
+    cedula1 = cedula / 1;
+    cedula = cedula - (cedula1 * 1);
+
+    printf("%d\n", cedulacopia);
+    printf("%d nota(s) de R$ 100,00\n", cedula100);
+    printf("%d nota(s) de R$ 50,00\n", cedula50);
+    printf("%d nota(s) de R$ 20,00\n", cedula20);
+    printf("%d nota(s) de R$ 10,00\n", cedula10);
+    printf("%d nota(s) de R$ 5,00\n", cedula5);
+    printf("%d nota(s) de R$ 2,00\n", cedula2);
+    printf("%d nota(s) de R$ 1,00\n", cedula1);
+
+}

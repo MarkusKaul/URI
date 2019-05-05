@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int vetor[15];
+
+int tempar(int vp[], int vt[]){
+    int cont = 0;
+    int quant = 0;
+    while(cont < 15){
+        if (vt[cont] % 2 == 0 && vetor[cont] != 1){
+            vp[quant] = vt[cont];
+            printf("par[%d] = %d\n", quant, vp[quant]);
+            vetor[cont] = 1;
+            quant++;
+        }
+        if(quant == 5) return 1;
+        cont++;
+    }
+    return 0;
+}
+
+int temimpar(int vi[], int vt[]){
+    int cont = 0;
+    int quant = 0;
+    while(cont < 15){
+        if (vt[cont] % 2 != 0 && vetor[cont] != 1){
+            vi[quant] = vt[cont];
+            printf("impar[%d] = %d\n", quant, vi[quant]);
+            vetor[cont] = 1;
+            quant++;
+        }
+        if(quant == 5) return 1;
+        cont++;
+    }
+    return 0;
+}
+
+int primeiroPar(int vt[]){
+    int p = 0;
+    int i = 0;
+    int c = 0;
+    while(c < 15){
+        if (vt[c] % 2 == 0){
+            p++;
+        } else {
+            i++;
+        }
+
+        if (p == 5) {
+            return 1;
+        } else if (i == 5){
+            return 0;
+        }
+    }
+}
+
+int main(){
+    int v[15], vpar[5], vimpar[5], cont = 0, par = 1, impar = 1;
+
+    while(cont < 15){
+        scanf("%d", &v[cont]);
+        cont++;
+    }
+
+    if(primeiroPar(v)){
+        par = tempar(vpar, v);
+        impar = temimpar(vimpar, v);
+    } else {
+        impar = temimpar(vimpar, v);
+        par = tempar(vpar, v);
+    }
+
+    while(impar){
+        impar = temimpar(vimpar, v);
+    }
+    while(par){
+        par = tempar(vpar, v);
+    }
+}

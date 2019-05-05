@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int horainicial, minutoinicial, horafinal, minutofinal;
+    int hora, minuto;
+    scanf("%d %d %d %d", &horainicial, &minutoinicial, &horafinal, &minutofinal);
+
+    if(horainicial == horafinal && minutoinicial == minutofinal){
+        printf("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)\n");
+    } else if (horainicial > horafinal && minutoinicial < minutofinal){
+        hora = abs(24 - (horainicial - horafinal));
+        minuto = minutofinal - minutoinicial;
+        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", hora, minuto);
+    } else if (horainicial < horafinal && minutoinicial > minutofinal){
+        hora = abs(horainicial - horafinal) - 1;
+        minuto = abs(60 - (minutoinicial - minutofinal));
+        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", hora, minuto);
+    } else if (horainicial > horafinal && minutoinicial > minutofinal){
+        hora = abs(24 - (horainicial - horafinal)) - 1;
+        minuto = abs(60 - (minutoinicial - minutofinal));
+        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", hora, minuto);
+    } else {
+        hora = abs(horainicial - horafinal);
+        minuto = minutofinal - minutoinicial;
+        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", hora, minuto);
+    }
+}

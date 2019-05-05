@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define HORA_SEGUNDO 3600
+#define MINUTO_SEGUNDO 60
+
+int main(){
+    int temposegundo, hora, minuto;
+
+    scanf("%d", &temposegundo);
+
+    hora = temposegundo / HORA_SEGUNDO;
+    temposegundo = temposegundo - (hora * HORA_SEGUNDO);
+
+    minuto = temposegundo / MINUTO_SEGUNDO;
+    temposegundo = temposegundo - (minuto * MINUTO_SEGUNDO);
+
+    printf("%d:%d:%d\n", hora, minuto, temposegundo);
+}

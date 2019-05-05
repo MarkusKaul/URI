@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int s, t, f, hora;
+    scanf("%d %d %d", &s, &t, &f);
+
+    hora = s + t + f;
+
+    if (hora == 24){
+        printf("%d\n", 0);
+    } else if (hora > 24){
+        hora = hora - 24;
+        printf("%d\n", hora);
+    } else if (hora < 0) {
+        hora = hora + 24;
+        printf("%d\n", hora);
+    } else {
+        printf("%d\n", hora);
+    }
+}

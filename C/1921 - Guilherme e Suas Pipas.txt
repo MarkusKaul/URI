@@ -1,0 +1,8 @@
+#include <stdio.h>
+int main(){
+    long n;
+    double tamanho;
+    scanf("%ld", &n);
+    tamanho = (n - 3) * (n / (float)2);
+    printf("%.0lf\n", tamanho);
+}

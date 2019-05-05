@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int v, cont = 0;
+    scanf("%d", &v);
+    while(cont < 10){
+        printf("N[%d] = %d\n", cont, v);
+        cont++;
+        v *= 2;
+    }
+}

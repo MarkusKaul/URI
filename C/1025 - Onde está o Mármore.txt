@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int a = 1; // variavel global para usar como contador dentro da funcao para imprimir a lista
+
+void quick_sort(int *a, int left, int right) {
+    int i, j, x, y;
+
+    i = left;
+    j = right;
+    x = a[(left + right) / 2];
+
+    while (i <= j) {
+        while(a[i] < x && i < right) {
+            i++;
+        }
+        while (a[j] > x && j > left) {
+            j--;
+        }
+        if(i <= j) {
+            y = a[i];
+            a[i] = a[j];
+            a[j] = y;
+            i++;
+            j--;
+        }
+    }
+
+    if (j > left) {
+        quick_sort(a, left, j);
+    }
+    if (i < right) {
+        quick_sort(a, i, right);
+    }
+}
+
+int main()
+{
+    int n, q, p;
+    //n numero de marmores a serem lidos
+    // q numero de consultas
+    // p usado para ler o numero dos marmores e das consultas
+    int register i, j;
+    while (scanf("%d %d", &n, &q))
+    {
+        if (n == 0 && q == 0)
+        {
+            break;
+        }
+         int vet[n+1];
+        for (i = 0; i < n; i++)
+        {
+            scanf(" %d", &vet[i]);
+        }
+
+        quick_sort(vet,0,n-1);
+
+        printf("CASE# %d:\n", a);
+        for (i = 0; i < q; i++)
+        {
+            scanf("%d", &p);
+            int cont = 0, cont2 = 0;
+
+            for (j = 0; j < n; j++)
+            {
+                cont++;
+                if (vet[j] == p)
+                {
+
+                    printf("%d found at %d\n", p, cont);
+                    cont2++;
+                    break;
+                }
+            }
+            if (cont2 == 0)
+            {
+                printf("%d not found\n", p);
+            }
+        }
+        a++;
+    }
+    return 0;
+}

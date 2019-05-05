@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    int a, b, c;
+    double x;
+
+    while (scanf("%d", &a) && a) {
+        scanf("%d %d", &b, &c);
+
+        x = (a * b * 100) / c;
+        printf("%.0lf\n", floor(sqrt(x)));
+    }
+}

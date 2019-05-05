@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct Aluno{
+    char nome[100];
+    char cor[11];
+    char tamanho;
+}aluno;
+
+void ordenacor(int tamanho,aluno *Aluno){
+    char nomeaux[100];
+    char coraux[11];
+    char tamanhoaux;
+
+    int i,j;
+    for( i = 1; i < tamanho; i++ ) {
+        for( j = i; j > 0; j-- ) {
+            if( strcmp(Aluno[j].cor, Aluno[j-1].cor) < 0){
+
+                strcpy(coraux,Aluno[j].cor);
+                strcpy(nomeaux,Aluno[j].nome);
+                tamanhoaux = Aluno[j].tamanho;
+
+                strcpy(Aluno[j].cor,Aluno[j-1].cor);
+                strcpy(Aluno[j].nome,Aluno[j-1].nome);
+                Aluno[j].tamanho = Aluno[j-1].tamanho;
+
+                strcpy(Aluno[j-1].cor,coraux);
+                strcpy(Aluno[j-1].nome,nomeaux);
+                Aluno[j-1].tamanho = tamanhoaux;
+            }
+
+        }
+    }
+}
+
+void ordenatamanho(int tamanho,aluno *Aluno){
+    char nomeaux[100];
+    char coraux[11];
+    char tamanhoaux;
+
+    int i,j;
+    for( i = 1; i < tamanho; i++ ) {
+        for( j = i; j > 0; j-- ) {
+            if( Aluno[j].tamanho > Aluno[j-1].tamanho && strcmp(Aluno[j].cor, Aluno[j-1].cor)==0){
+
+                strcpy(coraux,Aluno[j].cor);
+                strcpy(nomeaux,Aluno[j].nome);
+                tamanhoaux = Aluno[j].tamanho;
+
+                strcpy(Aluno[j].cor,Aluno[j-1].cor);
+                strcpy(Aluno[j].nome,Aluno[j-1].nome);
+                Aluno[j].tamanho = Aluno[j-1].tamanho;
+
+                strcpy(Aluno[j-1].cor,coraux);
+                strcpy(Aluno[j-1].nome,nomeaux);
+                Aluno[j-1].tamanho = tamanhoaux;
+            }
+
+        }
+    }
+}
+
+void ordenanome(int tamanho,aluno *Aluno){
+    char nomeaux[100];
+    char coraux[11];
+    char tamanhoaux;
+
+    int i,j;
+    for( i = 1; i < tamanho; i++ ) {
+        for( j = i; j > 0; j-- ) {
+            if( strcmp(Aluno[j].nome, Aluno[j-1].nome) < 0 && Aluno[j].tamanho == Aluno[j-1].tamanho && strcmp(Aluno[j].cor, Aluno[j-1].cor)==0){
+
+                strcpy(coraux,Aluno[j].cor);
+                strcpy(nomeaux,Aluno[j].nome);
+                tamanhoaux = Aluno[j].tamanho;
+
+                strcpy(Aluno[j].cor,Aluno[j-1].cor);
+                strcpy(Aluno[j].nome,Aluno[j-1].nome);
+                Aluno[j].tamanho = Aluno[j-1].tamanho;
+
+                strcpy(Aluno[j-1].cor,coraux);
+                strcpy(Aluno[j-1].nome,nomeaux);
+                Aluno[j-1].tamanho = tamanhoaux;
+            }
+
+        }
+    }
+}
+
+int main(){
+    int n,cont=0;
+    aluno teste[61];
+    int register i,j;
+    while(scanf(" %d",&n)){
+        if(n==0){
+            break;
+        }
+        for(i=0;i<n;i++){
+            scanf(" %[^\n]",teste[i].nome);
+            scanf("%s %c",&teste[i].cor, &teste[i].tamanho);
+        }
+
+        ordenacor(n,teste);
+        ordenatamanho(n,teste);
+        ordenanome(n,teste);
+        if(cont!=0){
+            printf("\n");
+        }
+        for(i=0; i<n;i++){
+            printf("%s %c %s\n",teste[i].cor,teste[i].tamanho,teste[i].nome);
+        }
+        cont++;
+    }
+
+    return 0;
+}
+

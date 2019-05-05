@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int cont;
+
+void selection_sort(int *vetor, int tam) {
+  int i, j, min, aux;
+  for (i = 0; i < (tam-1); i++)
+  {
+     min = i;
+     for (j = (i+1); j < tam; j++) {
+       if(vetor[j] < vetor[min])
+         min = j;
+     }
+     if (vetor[i] != vetor[min]) {
+       aux = vetor[i];
+       vetor[i] = vetor[min];
+       vetor[min] = aux;
+       cont++;
+     }
+  }
+}
+
+int main()
+{
+    int n, m, vetor[10100];
+    // n numero casos de teste
+    // m numero de inteiros na sequencia
+
+    int register i,j;
+    scanf(" %d", &n);
+    for (i = 0; i < n; i++)
+    {
+        cont=0;
+        scanf(" %d",&m);
+        for (j = 0; j < m; j++)
+        {
+            scanf(" %d", &vetor[j]);
+        }
+        selection_sort(vetor,m);
+        printf("%d\n",cont);
+    }
+    return 0;
+}
+
+
+

@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(){
+    int cont = 0, n, posicao, menor = 1000;
+    scanf("%d", &n);
+    int *v = (int*) malloc(sizeof(int) * n);
+
+    while(cont < n){
+        scanf("%d", &v[cont]);
+        if (v[cont] < menor){
+            menor = v[cont];
+            posicao = cont;
+        }
+        cont++;
+    }
+    printf("Menor valor: %d\n", menor);
+    printf("Posicao: %d\n", posicao);
+}

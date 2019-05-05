@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main(){
+    char letras[101][8], aux[8];
+    int n, cont = 1, brindes = 0;
+    strcpy(letras[0], "F A C E");
+    scanf("%d", &n);
+    int cpy = n;
+    while(n > 0){
+        scanf(" %[^\n]s", letras[cont]);
+        cont++;
+        n--;
+    }
+    cont = 0;
+    int i = 1;
+
+    while(i <= cpy){
+        if(letras[cont][0] != 'X'){
+            int j, t = 6;
+            for(j = 0; j < 8; j++){
+                //printf("[%c]", letras[i][t]);
+                aux[j] = letras[i][t];
+                t--;
+            }
+
+            if(!( strcmp(letras[cont],  aux))){
+                //printf("REVERSO!\n");
+                letras[i][0] = 'X';
+                if(cont > 0) {
+                    letras[cont][0] = 'X';
+                    cont--;
+                }
+                i++;
+                brindes++;
+            } else {
+                i++;
+                cont = i - 1;
+            }
+        } else {
+            cont--;
+        }
+    }
+    printf("%d\n", brindes);
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+   int distanciatotal;
+   double gasolinagasta, consumomedio;
+
+   scanf("%d", &distanciatotal);
+   scanf("%lf", &gasolinagasta);
+
+   consumomedio = distanciatotal / gasolinagasta;
+
+   printf("%.3f km/l\n", consumomedio);
+}

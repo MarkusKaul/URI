@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    while (scanf("%d", &n) != EOF)
+    {
+        int *vet;
+        int aux;
+        int register i, j;
+        vet = (int*) malloc(n * sizeof(int));
+        for (i = 0; i < n; i++)
+        {
+            scanf("%d", &vet[i]);
+        }
+
+        for (i = 1; i < n; i++)
+        {
+            for (j = 0; j < n - 1; j++)
+            {
+                if (vet[j] > vet[j + 1])
+                {
+                    aux = vet[j];
+                    vet[j] = vet[j + 1];
+                    vet[j + 1] = aux;
+                }
+            }
+        }
+
+        for (i = 0; i < n; i++)
+        {
+            printf("%04d\n",vet[i]);
+        }
+        free(vet);
+    }
+    return 0;
+}

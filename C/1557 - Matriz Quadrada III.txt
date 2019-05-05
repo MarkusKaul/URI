@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    int ordem;
+
+    while (scanf("%d", &ordem) && ordem){
+            int c = 1;
+            int contC = 0;
+            while (contC < ordem) {
+                int m = c;
+                int contL = 0;
+                while (contL < ordem - 1) {
+                    if (ordem == 3 || ordem == 4){
+                        printf("%2d ", m);
+                    } else if(ordem == 5){
+                        printf("%3d ", m);
+                    } else if (ordem == 6 || ordem == 7) {
+                        printf("%4d ", m);
+                    } else if (ordem == 8 || ordem == 9){
+                        printf("%5d ", m);
+                    } else if (ordem == 10){
+                        printf("%6d ", m);
+                    } else if (ordem == 11 || ordem == 12){
+                        printf("%7d ", m);
+                    } else if (ordem == 13 || ordem == 14){
+                        printf("%8d ", m);
+                    } else if (ordem == 15){
+                        printf("%9d ", m);
+                    } else {
+                        printf("%d ", m);
+                    }
+                    contL++;
+                    m = m + m;
+                }
+                if (ordem == 3 || ordem == 4){
+                        printf("%2d\n", m);
+                    } else if(ordem == 5){
+                        printf("%3d\n", m);
+                    } else if (ordem == 6 || ordem == 7) {
+                        printf("%4d\n", m);
+                    } else if (ordem == 8 || ordem == 9){
+                        printf("%5d\n", m);
+                    } else if (ordem == 10){
+                        printf("%6d\n", m);
+                    } else if (ordem == 11 || ordem == 12){
+                        printf("%7d\n", m);
+                    } else if (ordem == 13 || ordem == 14){
+                        printf("%8d\n", m);
+                    } else if (ordem == 15){
+                        printf("%9d\n", m);
+                    } else {
+                        printf("%d\n", m);
+                    }
+                c = c + c;
+                contC++;
+            }
+             printf("\n");
+    }
+}

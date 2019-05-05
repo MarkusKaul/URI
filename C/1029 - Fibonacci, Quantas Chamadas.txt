@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int chamadasfibo(int n, int* cal){
+    *cal += 1;
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+
+    //printf("V: %d E: %d\n ", *cal, cal);
+
+    return chamadasfibo(n-1, cal) + chamadasfibo(n-2, cal);
+}
+
+int main(){
+    int n, num_calls = 0, fib;
+    scanf("%d", &n);
+
+    while(n > 0){
+        int calls = -1;
+        scanf("%d", &fib);
+        //printf("Vi: %d Ei: %d\n", calls, &calls);
+        num_calls = chamadasfibo(fib, &calls);
+        printf("fib(%d) = %d calls = %d\n", fib, calls, num_calls);
+        n--;
+    }
+
+}

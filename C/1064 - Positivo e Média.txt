@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int quantidadedepositivos = 0, cont = 0;
+    float numero, media = 0;
+
+    while (cont < 6){
+        scanf("%f", &numero);
+        if (numero >= 0) {
+            quantidadedepositivos++;
+            media += numero;
+        }
+        cont++;
+    }
+    media = media / quantidadedepositivos;
+    printf("%d valores positivos\n", quantidadedepositivos);
+    printf("%.1f\n", media);
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int casos, r1, r2;
+
+    scanf("%d", &casos);
+    int cont = 0;
+    while(cont < casos){
+        scanf("%d %d", &r1, &r2);
+        printf("%d\n", r1 + r2);
+        cont++;
+    }
+}

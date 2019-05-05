@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int numero[100000], cont = 0, sequencia = 0;
+
+    do {
+        scanf("%d", &numero[cont]);
+        cont++;
+    } while (numero[cont - 1] != 0);
+
+    cont = 0;
+    while(numero[cont] != 0){
+        sequencia = 0;
+        while (sequencia < numero[cont] - 1){
+            sequencia++;
+            printf("%d ", sequencia);
+        }
+        sequencia++;
+        printf("%d\n", sequencia);
+        cont++;
+    }
+}

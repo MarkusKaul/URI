@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    int n, cont = 0;
+    long power;
+    char heroi[50], levantou[5000];
+
+    scanf("%d", &n);
+
+    while (cont < n){
+        scanf("%s %ld", heroi, &power);
+        if (!(strcmp(heroi, "Thor"))) {
+            levantou[cont] = 'Y';
+        } else {
+            levantou[cont] = 'N';
+        }
+        cont++;
+    }
+
+    cont = 0;
+    while (cont < n){
+        printf("%c\n", levantou[cont]);
+        cont++;
+    }
+}

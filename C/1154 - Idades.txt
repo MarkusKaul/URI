@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int cont = 0,  numero, total = 0;
+    float media;
+
+    do {
+        scanf("%d", &numero);
+        if(numero >= 0){
+            total += numero;
+            cont++;
+        }
+    } while (numero > 0);
+    media = (float)total / cont;
+    printf("%.2f\n", media);
+}

@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int n, cont = 0, quantia, totaldecobaias, totaldecoelhos = 0, totaldesapos = 0, totalderatos = 0;
+    float percentualdecoelhos, percentualdesapos, percentualderatos;
+    char tipo, p = '%';
+
+    scanf("%d", &n);
+
+    while (cont < n){
+        scanf("%d %c", &quantia, &tipo);
+        switch(tipo){
+            case 'C':
+                totaldecoelhos += quantia;
+                break;
+            case 'S':
+                totaldesapos += quantia;
+                break;
+            case 'R':
+                totalderatos += quantia;
+                break;
+        }
+        cont++;
+    }
+    totaldecobaias = totaldecoelhos + totalderatos + totaldesapos;
+    percentualdecoelhos = (totaldecoelhos * 100.0) / totaldecobaias;
+    percentualderatos = (totalderatos * 100.0) / totaldecobaias;
+    percentualdesapos = (totaldesapos * 100.0) / totaldecobaias;
+
+    printf("Total: %d cobaias\n", totaldecobaias);
+    printf("Total de coelhos: %d\n", totaldecoelhos);
+    printf("Total de ratos: %d\n", totalderatos);
+    printf("Total de sapos: %d\n", totaldesapos);
+    printf("Percentual de coelhos: %.2f %c\n", percentualdecoelhos, p);
+    printf("Percentual de ratos: %.2f %c\n", percentualderatos, p);
+    printf("Percentual de sapos: %.2f %c\n", percentualdesapos, p);
+}

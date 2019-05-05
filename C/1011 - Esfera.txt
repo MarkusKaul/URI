@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define PI 3.14159
+
+int main(){
+    double r, volume;
+
+    scanf("%lf", &r);
+
+    volume = (4/3.0) * PI * (r * r * r);
+
+    printf("VOLUME = %.3f\n", volume);
+
+}

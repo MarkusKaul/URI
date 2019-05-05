@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(){
+    char mineracao[1000];
+    int i, j, n;
+    scanf("%d", &n);
+
+    while(n > 0){
+        scanf("%s", mineracao);
+        int diamantes = 0;
+        for(i = 0; i < strlen(mineracao); i++){
+            //printf("%c\n", mineracao[i]);
+            //printf("%d\n", i);
+            //printf("%d\n", strlen(mineracao));
+            if (mineracao[i] == '<'){
+                //printf("ACHEI UM LADO\n");
+                for(j = i+1; j < strlen(mineracao); j++){
+                    if(mineracao[j] == '>'){
+                        //printf("ACHEI O OUTRO\n");
+                        diamantes++;
+                        mineracao[j] = '.';
+                        mineracao[i] = '.';
+                        break;
+                    }
+                }
+            }
+        }
+        n--;
+        printf("%d\n", diamantes);
+    }
+}

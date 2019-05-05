@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int ehtriangulo(float la, float lb, float lc){
+    if(abs(lb - lc) < la && la < lb + lc){
+        if(abs(la - lc) < lb && lb < la + lc){
+            if(abs(la - lb) < lc && lc < la + lb){
+                return 1;
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+
+int main(){
+    float a, b, c;
+    scanf("%f %f %f", &a, &b, &c);
+
+    if(ehtriangulo(a, b, c)){
+        float perimetro = a + b + c;
+        printf("Perimetro = %.1f\n", perimetro);
+    } else {
+        float area = ((a + b) * c) / 2;
+        printf("Area = %.1f\n", area);
+    }
+}

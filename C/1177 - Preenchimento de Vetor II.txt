@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int t, aux = 0, cont = 0;
+    scanf("%d", &t);
+
+    while(cont < 1000){
+        printf("N[%d] = %d\n", cont, aux);
+        aux++;
+        if (aux == t){
+            aux = 0;
+        }
+        cont++;
+    }
+}

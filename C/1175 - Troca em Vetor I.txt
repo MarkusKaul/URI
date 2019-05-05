@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int v[20], cont = 0, tnoc = 19, aux;
+    while(cont < 20){
+        scanf("%d", &v[cont]);
+        cont++;
+    }
+    cont = 0;
+    while(cont < 10){
+        aux = v[cont];
+        v[cont] = v[tnoc];
+        v[tnoc] = aux;
+        cont++;
+        tnoc--;
+    }
+    cont = 0;
+    while(cont < 20){
+        printf("N[%d] = %d\n", cont, v[cont]);
+        cont++;
+    }
+}

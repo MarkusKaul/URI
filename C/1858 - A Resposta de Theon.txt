@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int i, escolha, n, menor = 20;
+    scanf("%d", &n);
+    int *t = (int*) malloc(sizeof(int) * n);
+    for(i = 0; i < n; i++){
+        scanf("%d", &t[i]);
+        if(t[i] < menor){
+            escolha = i + 1;
+            menor = t[i];
+        }
+    }
+    printf("%d\n", escolha);
+}

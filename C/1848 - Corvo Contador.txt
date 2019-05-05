@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+    int i, grito = 0, soma = 0, binario = 0, subsoma = 0;
+    char texto[8];
+    while(grito < 3){
+        scanf(" %[^\n]s", texto);
+        if(!(strcmp(texto, "caw caw"))){
+            grito++;
+            printf("%d\n", soma);
+            soma = 0;
+        } else {
+            for(i = 0; i < 3; i++){
+                if (texto[i] == '*') binario = 1;
+                else binario = 0;
+                subsoma = subsoma * 2 + binario;
+            }
+            soma += subsoma;
+            subsoma = 0;
+        }
+    }
+}

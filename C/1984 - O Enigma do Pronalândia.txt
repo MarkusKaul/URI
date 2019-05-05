@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int reverso(long long int n){
+    printf("%lld", n % 10);
+    if(n / 10 == 0) return 0;
+    reverso(n / 10);
+}
+
+int main(){
+    long long int n;
+    scanf("%lld", &n);
+    reverso(n);
+    printf("\n");
+}

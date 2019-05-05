@@ -1,0 +1,84 @@
+/*
+site, acessado em 12/11/2018, algoritmo merge sort
+http://mattleao.blogspot.com/2015/04/ordenacao-pt-2-mergesort-e-contando.html
+*/
+
+int cont= 0;
+
+void Merge(int *vet, int left, int right) {
+    int aux_count = 0;
+    int mid = (left+right)/2;
+    int *aux;
+    aux  =(int*)malloc((right - left + 1) * sizeof(int));
+    int p1, p2,i;
+    p1 = left;
+    p2 = mid+1;
+
+    while(p1 <= mid && p2 <= right) {
+        if(vet[p1] <= vet[p2]){
+            aux[aux_count++] = vet[p1++];
+        }
+        else{
+            aux[aux_count++] = vet[p2++];
+            cont += (mid - p1 + 1);
+        }
+    }
+
+    while(p1 <= mid){
+        aux[aux_count++] = vet[p1++];
+    }
+
+    while(p2 <= right){
+        aux[aux_count++] = vet[p2++];
+    }
+
+    for(i = 0; i < aux_count; i++) {
+        vet[left++] = aux[i];
+    }
+}
+
+void MergeSort(int *vet, int left, int right) {
+
+    if(left >= right){
+        return;
+    }
+
+    int mid = (left+right)/2;
+
+    MergeSort(vet, left, mid);
+
+    MergeSort(vet, mid+1, right);
+    Merge(vet, left, right);
+}
+
+int main()
+{
+    int n,vetor[100005];
+    int register i;
+    while (scanf("%d", &n))
+    {
+        if (n == 0)
+        {
+            break;
+        }
+        for (i = 0; i < n; i++)
+        {
+            scanf(" %d", &vetor[i]);
+        }
+
+        cont = 0;
+
+        MergeSort(vetor,0,n-1);
+
+        if (cont % 2 == 0)
+        {
+            printf("Carlos\n");
+        }
+        else
+        {
+            printf("Marcelo\n");
+        }
+    }
+
+    return 0;
+}
